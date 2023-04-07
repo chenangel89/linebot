@@ -1,5 +1,10 @@
 require('dotenv').config();
 
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+
 const line = require('@line/bot-sdk');
 const express = require('express');
 
