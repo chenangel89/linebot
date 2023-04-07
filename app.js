@@ -45,7 +45,6 @@ const completion = await openai.createCompletion({
   model: "text-davinci-003",
   prompt: event.message.text ,
   max_tokens: 1024,
-  frequency_penalty: 1.0, //多樣化
   presence_penalty: 1.0 //相關
 });
 
