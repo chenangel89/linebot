@@ -44,7 +44,10 @@ async function handleEvent(event) {
 const completion = await openai.createCompletion({
   model: "text-davinci-003",
   prompt: event.message.text ,
-  max_tokens: 250,
+  max_tokens: 300,
+  temperature: 0.8, //不可預測
+  frequency_penalty: 1, //多樣化
+  presence_penalty: 1, //相關
 });
 
 const echo = { type: 'text', text: completion.data.choices[0].text.trim() };
