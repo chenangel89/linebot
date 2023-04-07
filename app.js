@@ -46,7 +46,7 @@ const completion = await openai.createCompletion({
   prompt: event.message.text ,
   max_tokens: 300,
   frequency_penalty: 1.0, //多樣化
-  presence_penalty: 1.0, //相關
+  presence_penalty: 1.0 //相關
 });
 
 const echo = { type: 'text', text: completion.data.choices[0].text.trim() };
